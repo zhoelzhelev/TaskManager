@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="TaskManager/TaskManager.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>

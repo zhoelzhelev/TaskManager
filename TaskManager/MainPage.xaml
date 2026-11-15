@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.MainPage"
+             BackgroundColor="#E9B60E"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto,*">
+
+
+        <Grid Grid.Row="0"
+              BackgroundColor="#E9B60E"
+              Padding="10,5"
+              ColumnDefinitions="Auto,*">
+
+            <Button Grid.Column="0"
+                    Text="Add"
+                    Padding="12,4"
+                    TextColor="Grey"
+                    BorderColor="Grey"
+                    BorderWidth="0.5"
+                    CornerRadius="20"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start" 
+                    WidthRequest="100"
+                    Command="{Binding TapCommand}"/>
+
+        </Grid>
+
+
+        <Grid Grid.Row="1"
+              BackgroundColor="#F7DB7D">
+
+
+            <CollectionView ItemsSource="{Binding Tasks}"
+                Margin="8"
+                SelectionMode="None">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                         Span="2"
+                         HorizontalItemSpacing="8"
+                         VerticalItemSpacing="8" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Border BackgroundColor="#FFF9E9"
+                    Stroke="#E2C66C"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 16"
+                    Padding="0"
+                    HeightRequest="270">
+
+                            <Grid RowDefinitions="180,90"
+                      RowSpacing="0">
+
+                                <Image Grid.Row="0"
+                           Source="{Binding ImageURL}"
+                           Aspect="AspectFill" />
+
+                                <VerticalStackLayout Grid.Row="1"
+                                         Padding="8,5"
+                                         Spacing="2">
+
+                                    <Label Text="{Binding Name}"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               TextColor="#333333"
+                               LineBreakMode="TailTruncation"
+                               MaxLines="1" />
+
+                                    <Label Text="{Binding Time}"
+                               FontSize="10"
+                               FontAttributes="Bold"
+                               TextColor="#9A7600" />
+
+                                    <Label Text="{Binding Acctivity}"
+                               FontSize="11"
+                               TextColor="#555555"
+                               LineBreakMode="TailTruncation"
+                               MaxLines="2" />
+
+                                </VerticalStackLayout>
+
+                            </Grid>
+
+                        </Border>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

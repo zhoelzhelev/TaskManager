@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.AddTaskPage"
+             Title="AddTaskPage"
+             BackgroundColor="#E9B60E"
+             Shell.NavBarIsVisible="False">
+
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label Text="Name" 
+       FontAttributes="Bold"
+       TextColor="Black"/>
+            <Border Stroke="#7D7D7D"
+        StrokeThickness="2"
+        BackgroundColor="#CECECE">
+                <Entry BackgroundColor="Transparent"
+           TextColor="#7D7D7D"
+                       Text="{Binding Name}"/>
+
+            </Border>
+
+            <Label Text="Activity" 
+       FontAttributes="Bold"
+       TextColor="Black"/>
+            <Border Stroke="#7D7D7D"
+        StrokeThickness="2"
+        BackgroundColor="#CECECE">
+                <Entry BackgroundColor="Transparent"
+           TextColor="#7D7D7D"
+                       Text="{Binding Activity}"/>
+
+            </Border>
+
+            <Label Text="Time" 
+       FontAttributes="Bold"
+       TextColor="Black"/>
+            <Border Stroke="#7D7D7D"
+        StrokeThickness="2"
+        BackgroundColor="#CECECE">
+                <Entry BackgroundColor="Transparent"
+           TextColor="#7D7D7D"
+                       Text="{Binding Time}"/>
+
+            </Border>
+
+            <Label Text="ImageURL" 
+       FontAttributes="Bold"
+       TextColor="Black"/>
+            <Border Stroke="#7D7D7D"
+        StrokeThickness="2"
+        BackgroundColor="#CECECE">
+                <Entry BackgroundColor="Transparent"
+           TextColor="#7D7D7D"
+                       Text="{Binding ImageURL}"/>
+
+            </Border>
+
+            <Button Text="Add Task"
+                    Command="{Binding AddCommand}"
+                    BackgroundColor="#CECECE"
+                    TextColor="#7D7D7D"
+                    CornerRadius="12"
+                    HeightRequest="50"
+                    FontAttributes="Bold" 
+                    BorderColor="#7D7D7D"
+                    Margin="0,20,0,0" 
+/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
